@@ -1,15 +1,15 @@
 from enum import Enum
 
-#TODO Definir funcionamento do grupo
 class UserType(Enum):
     OWNER = 1
     USER = 2
 
 class User:
-    def __init__(self):
-        self.type = ''
-        self.group = ''
+    def __init__(self, name, uid, gid):
+        self.name = name
+        self.uid = uid
+        self.gid = gid
+        self.type = UserType.USER
 
-
-    def check_permission(self):
-        pass
+    def __repr__(self):
+        return f"User({self.name}, uid={self.uid}, gid={self.gid})"
